@@ -9,12 +9,6 @@ and inspect the data
 // console.log("todos: ", window.todos);
 
 
-// let userLetter = prompt("Insert a letter:");
-
-// let userLetterArray = users.filter(function(user){
-//     return user.name.includes(userLetter)
-// })
-
 function returnArrayWhichContainsLetter(letter){
    
     return users.filter(function(user){ 
@@ -40,6 +34,19 @@ function logIncompleteTasks(){
         return task.userId === id
     }))
 }
-
+//"It's perfectly okay to prompt a user for details while other stuff (i.e. the interval) is running."
+//Didnt see this until after I finished the exercise.
 setTimeout(logIncompleteTasks,(userLetterArray.length) * 2000)
 
+
+//Challenge
+let list = '';
+function displayEmailOrAddress(){
+    let emailOrAddressInput = prompt('Email or Address:').toLowerCase()
+    for(const user of users){
+        list +=`${user.name} - ${user[emailOrAddressInput]}\n`
+    }
+    console.log(list)
+}
+
+displayEmailOrAddress()
