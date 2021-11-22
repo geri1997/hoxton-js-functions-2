@@ -32,13 +32,14 @@ function greet(userArr){
 
 const greetInterval = setInterval(greet,2000,userLetterArray)
 
-function logIncompleteTasks(id){
+function logIncompleteTasks(){
+    let id = Number(prompt('Enter User Id:'))
     console.log(todos.filter(function(todo){
         return todo.completed ===false
-    }).filter(function(todo){
-        return todo.userId===id
-     }))
+    }).filter(function(task){
+        return task.userId === id
+    }))
 }
 
-setTimeout(logIncompleteTasks(),14000,1)
+setTimeout(logIncompleteTasks,(userLetterArray.length) * 2000)
 
